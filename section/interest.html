@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest & Hobby - Nicole Pillerva</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <meta name="description" content="Interest & Hobby of Nicole Pillerva">
+    <meta name="theme-color" content="#f48fb1">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Nicole V. Pillerva</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        More
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="family.html">Family Background</a>
+                        <a href="interest.html">Interest & Hobby</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="advocates.html">Advocates</a>
+                        <a href="whereabouts.html">Whereabouts</a>
+                    </div>
+                </li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-header" id="interest">
+        <div class="page-header-content">
+            <h1>Interest & Hobby</h1>
+            <p>Things I love to do</p>
+        </div>
+    </section>
+
+    <section class="skills-section" id="interest">
+        <div class="skills-container">
+            <h2 class="section-title"><i class="fas fa-heart"></i> My Interests & Hobbies</h2>
+            <p class="section-subtitle">Things I love to do in my free time</p>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; color: #666; line-height: 1.8;">
+                These are the activities that bring me joy and fulfillment outside of my studies.
+            </p>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4><i class="fas fa-music"></i> Cultural Dance</h4>
+                    <p>Performing traditional and contemporary dances, preserving cultural heritage through movement and expression.</p>
+                </div>
+                <div class="skill-item">
+                    <h4><i class="fas fa-book-reader"></i> Reading</h4>
+                    <p>Exploring diverse literature, from classic novels to educational texts that broaden my perspectives.</p>
+                </div>
+                <div class="skill-item">
+                    <h4><i class="fas fa-pencil-alt"></i> Writing</h4>
+                    <p>Crafting stories, poems, and reflective journals that capture moments and ideas.</p>
+                </div>
+                <div class="skill-item">
+                    <h4><i class="fas fa-camera"></i> Photography</h4>
+                    <p>Capturing beautiful moments and memories through the lens, appreciating art in everyday life.</p>
+                </div>
+                <div class="skill-item">
+                    <h4><i class="fas fa-church"></i> Worship Dance</h4>
+                    <p>Expressing faith through dance, combining spiritual devotion with artistic movement.</p>
+                </div>
+                <div class="skill-item">
+                    <h4><i class="fas fa-users"></i> Volunteering</h4>
+                    <p>Giving back to the community through teaching, mentoring, and various service projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Nicole V. Pillerva. Made with you <i class="fas fa-heart" style="color: #f48fb1;"></i></p>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenu.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Dropdown toggle for mobile
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdown = document.querySelector('.dropdown');
+
+        dropdownToggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

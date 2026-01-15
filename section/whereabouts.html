@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whereabouts - Nicole Pillerva</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <meta name="description" content="Whereabouts of Nicole Pillerva">
+    <meta name="theme-color" content="#f48fb1">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Nicole V. Pillerva</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        More
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="family.html">Family Background</a>
+                        <a href="interest.html">Interest & Hobby</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="advocates.html">Advocates</a>
+                        <a href="whereabouts.html">Whereabouts</a>
+                    </div>
+                </li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-header" id="whereabouts">
+        <div class="page-header-content">
+            <h1>Whereabouts</h1>
+            <p>Where you can find me</p>
+        </div>
+    </section>
+
+    <section class="contact-section" id="whereabouts">
+        <div class="contact-container">
+            <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> Where You Can Find Me</h2>
+            <p class="section-subtitle">My regular spots and activities</p>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; color: #666; line-height: 1.8;">
+                Here's where I spend most of my time throughout the week.
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-university"></i>
+                    <div>
+                        <h4 style="color: #333; margin-bottom: 0.25rem;">University</h4>
+                        <p style="font-size: 0.9rem; color: #666;">Daily - Classes, library, student activities</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-church"></i>
+                    <div>
+                        <h4 style="color: #333; margin-bottom: 0.25rem;">Church</h4>
+                        <p style="font-size: 0.9rem; color: #666;">Weekends - Worship services & dance ministry</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-music"></i>
+                    <div>
+                        <h4 style="color: #333; margin-bottom: 0.25rem;">Cultural Events</h4>
+                        <p style="font-size: 0.9rem; color: #666;">Occasional - Performances & festivals</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-home"></i>
+                    <div>
+                        <h4 style="color: #333; margin-bottom: 0.25rem;">Home</h4>
+                        <p style="font-size: 0.9rem; color: #666;">Evenings - Family time & preparation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-links" style="margin-top: 3rem;">
+                <a href="https://www.facebook.com/nicole.villela.pillerva" class="social-link" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="mailto:pillervanicole1@gmail.com" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Nicole V. Pillerva. Made with you <i class="fas fa-heart" style="color: #f48fb1;"></i></p>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenu.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Dropdown toggle for mobile
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdown = document.querySelector('.dropdown');
+
+        dropdownToggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
